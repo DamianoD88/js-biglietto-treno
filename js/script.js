@@ -1,20 +1,25 @@
-var km = prompt('Quanti Km?') 
+var km = prompt('Quanti Km?'); 
 
-var eta = prompt('Quanti anni hai?') 
+var eta = prompt('Quanti anni hai?');
+
+var messaggio = ('Nessuno sconto');
+
+var prezzo = 0.21 * parseInt( km );
 
 if (eta < 18) {
-    
-    console.log( 'minorenne' )
+
+    prezzo = prezzo - prezzo * 20 / 100;
+    console.log('minorenne');
 
 }else if ( eta >= 65) {
 
-    console.log( 'over65')
+    prezzo = prezzo - prezzo * 40 /100;
+    console.log('over65');
 
-}else{
+}else if (eta >= 18 || eta > 65 ) {
 
-    var prezzo = 0.21 * parseInt( km );
+    console.log('nessuno sconto');
 }
 
 
-console.log( prezzo )
 
